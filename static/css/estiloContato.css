@@ -1,0 +1,45 @@
+#conteudo{
+    padding: 20px 30px; 
+    max-width: 1050px; 
+    margin: 0 auto;
+  }
+
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.grid-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.informacoes-contato p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.informacoes-contato a {
+    text-decoration: none;
+    color: #094d00;
+}
+
+.informacoes-contato a:hover {
+    text-decoration: underline;
+}
+
+
+.mapa-contato {
+    width: 100%;
+    height: 300px; 
+}
+
+.mapa {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
