@@ -1,8 +1,10 @@
-modules = ["web"]
-run = "npm run start"
+
+modules = ["python-3.10:v18-20230807-322e88b"]
+run = "python -m http.server 8000"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "npm run start"]
+run = ["sh", "-c", "python -m http.server 8000"]
+deploymentTarget = "static"
