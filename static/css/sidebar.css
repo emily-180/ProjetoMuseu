@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar .logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.sidebar .menu {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: #ffffffcc;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.sidebar .menu a:hover {
+  background-color: #145c19;
+  color: #fff;
+}
+
+.sidebar .logout {
+  margin-top: auto;
+  text-decoration: none;
+  color: #ffb3b3;
+  padding: 12px;
+  font-weight: bold;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s;
+}
+
+.sidebar .logout:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+.content {
+  margin-left: 260px;
+  padding: 40px 30px;
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 1100;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #0e4711;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #0e4711;
+  color: white;
+  display: flex;
+  flex-direction: column; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar.mobile-hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar.mobile-visible {
+  transform: translateX(0);
+}
+.sidebar {
+  overflow-y: auto;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar.mobile-hidden {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.mobile-visible {
+    transform: translateX(0);
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px;
+  }
+
+  .sidebar .menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sidebar .logo {
+    width: 40px;
+  }
+
+  .sidebar h1 {
+    display: none;
+  }
+
+  .sidebar .logo {
+    width: 100px; 
+    margin-bottom: 10px;
+  }
+
+  .sidebar h1 {
+    display: block; 
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+}

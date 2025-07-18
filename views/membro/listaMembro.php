@@ -19,7 +19,7 @@ ob_start();
 
   <div class="header">
     <h1>Gerenciamento da Equipe</h1>
-    <a href="/ProjetoMuseu/routerMembro.php?action=exibirFormCadastro" class="btn-add">+ Novo Membro</a>
+    <a href="/ProjetoMuseu/routerMembro.php?action=exibirFormCadastro" class="btn">+ Novo Membro</a>
   </div>
 
   <section class="secao-tabela">

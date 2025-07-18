@@ -44,7 +44,7 @@ body {
   
   .left-box {
     flex: 1;
-    background-image: url('/SitedoMuseu/static/imagens/teste.jpg');
+    background-image: url('/ProjetoMuseu/static/imagens/teste.jpg');
     background-size: cover;
     background-position: center;
   }

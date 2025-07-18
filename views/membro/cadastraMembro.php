@@ -11,7 +11,7 @@ ob_start();
 <main class="main-content">
   <div class="header">
     <h1>Cadastrar membro</h1>
-    <a href="/ProjetoMuseu/routerMembro.php?action=listar" class="btn-add">← Voltar</a>
+    <a href="/ProjetoMuseu/routerMembro.php?action=listar" class="btn">← Voltar</a>
   </div>
 
   <form method="POST" action="/ProjetoMuseu/routerMembro.php?action=salvar">
@@ -70,12 +70,12 @@ ob_start();
       <?php endif; ?>
     </div>
 
-    <button type="submit" class="btn-add-membro">Cadastrar</button>
+    <button type="submit" class="btn">Cadastrar</button>
   </form>
 </main>
 
 <?php
 $conteudo = ob_get_clean();
-$pagina_css = 'membro.css';
+$pagina_css = 'membro.css';  // Aqui carrega o CSS que você criou
 require __DIR__ . '/../includes/layout.php';
 ?>
