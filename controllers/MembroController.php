@@ -64,10 +64,10 @@ class MembroController
 
     public function listar()
     {
-        if (!isset($_SESSION['usuario_id'])) {
+       /* if (!isset($_SESSION['usuario_id'])) {
             header('Location: /ProjetoMuseu/routerAuth.php?page=login');
             exit;
-        }
+        }*/
 
         $membros = $this->membroModel->listar();
         require __DIR__ . '/../views/membro/listaMembro.php';
@@ -75,10 +75,10 @@ class MembroController
 
     public function exibirFormCadastro()
     {
-        if (!isset($_SESSION['usuario_id'])) {
+        /*if (!isset($_SESSION['usuario_id'])) {
             header('Location: /ProjetoMuseu/routerAuth.php?page=login');
             exit;
-        }
+        }*/
 
         $erros = $_SESSION['erros'] ?? [];
         $dados = $_SESSION['dados'] ?? [];
