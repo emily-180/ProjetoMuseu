@@ -1,85 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poopins';
-  }
-  
-  body {
-    background: #f2f2f2;
-    color: #000;
-  }
-  
-  .container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .sidebar {
-    width: 350px;
-    background: #0e4711;
-    color: white;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    font-size: 20px;
-    position: fixed; /* fixa no lado esquerdo */
-    top: 0;
-    left: 0;
-  }
-  
-  .sidebar .logo {
-    width: 170px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto; 
-  }
-  
-  .sidebar a.logout {
-    margin-top: auto;
-    color: #e74c3c;
-    font-weight: bold;
-  } 
-  .sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .sidebar nav a {
-    display: block;
-    color: white; 
-    padding: 10px 0;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-    font-size: 1rem;
-  }
-  
-  .sidebar nav a:hover,
-  .sidebar nav a.active {
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    padding: 40px;
-    margin-left: 120px; /* empurra o conteúdo para direita da sidebar fixa */
-    background-color: #f9f9f9; /* opcional, para destacar */
-    min-height: 100vh;
-    
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .secao-tabela {
-    margin-top: 30px;
+* .secao-tabela {
+    margin-top: 20px;
     width: 100%;
   }
   
@@ -94,7 +14,7 @@
   }
   
   .tabela-visitas th, .tabela-visitas td {
-    padding: 16px 20px;
+    padding: 10px 10px;
     text-align: center;
     border-bottom: 1px solid #ddd;
   }

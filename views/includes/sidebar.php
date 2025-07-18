@@ -1,11 +1,18 @@
-<aside class="sidebar">
-  <img src="/ProjetoMuseu/static/imagens/logo.png" alt="Logo do Museu" class="logo">
-  <h2>Museu de Ciências Naturais José Alencar de Carvalho</h2>
-  <nav>
-    <a class="active" href="/ProjetoMuseu/routerMembro.php?action=listar"><i class="bi bi-people-fill"></i>  Membros</a>
-    <a class="active" href="/ProjetoMuseu/views/gerenciamento/solicitacoes.php"><i class="bi bi-calendar"></i>  Solicitações</a>
+<button class="hamburger" id="hamburgerBtn">
+  <i class="bi bi-list"></i>
+</button>
+
+<aside class="sidebar mobile-hidden" id="sidebar">
+  <div class="sidebar-header">
+    <img src="/ProjetoMuseu/static/imagens/logo.png" alt="Logo do Museu" class="logo">
+    <h1>Museu José Alencar de Carvalho</h1>
+  </div>
+  <nav class="menu">
+     <a href="/ProjetoMuseu/views/gerenciamento/gerenciamento.php"><i class="bi bi-book-half"></i> Painel</a>
+    <a href="/ProjetoMuseu/routerMembro.php?action=listar"><i class="bi bi-people-fill"></i> Membros</a>
+    <a href="/ProjetoMuseu/template/gerenciaSolicitacao.php"><i class="bi bi-calendar"></i> Solicitações</a>
   </nav>
-  <a href="/ProjetoMuseu/views/logout.php" class="logout">
+  <a href="/ProjetoMuseu/routerAuth.php?page=logout" class="logout">
     <i class="bi bi-box-arrow-right"></i> Sair
   </a>
 </aside>
