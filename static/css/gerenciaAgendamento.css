@@ -1,0 +1,109 @@
+/* Reset básico */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  overflow: hidden; /* evita scroll no body, usaremos scroll interno */
+}
+
+/* Container geral que engloba sidebar e conteúdo */
+.container-geral {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar fixa */
+.sidebar {
+  background-color: #145c19;
+  color: white;
+  width: 250px; /* largura fixa para sidebar */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* permite scroll caso sidebar ultrapasse altura */
+}
+
+/* Título sidebar */
+.sidebar h2 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Links do menu */
+.sidebar nav a {
+  display: block;
+  color: #ccc;
+  margin: 10px 0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Conteúdo principal que fica ao lado da sidebar */
+.main-content {
+  flex-grow: 1; /* ocupa o espaço restante */
+  padding: 20px;
+  overflow-y: auto; /* scroll interno caso conteúdo ultrapasse altura */
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho da página */
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.secao-lista {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-visita {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+}
+
+.visita-titulo {
+  width: 100%;
+  padding: 10px 16px;
+  background: white;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.visita-titulo:hover {
+  background-color: #f0f0f0;
+}
+
+.visita-titulo .escola {
+  font-weight: bold;
+  color: #111;
+}
+
+.visita-titulo .data {
+  font-size: 13px;
+  color: #666;
+}
+
+.visita-detalhes {
+  display: none;
+  padding: 10px 18px;
+  background-color: #fafafa;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+

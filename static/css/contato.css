@@ -1,0 +1,64 @@
+#conteudo {
+    padding: 20px 30px;
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+  
+  .titulo {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .grid-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+  
+  .informacoes-contato p {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .informacoes-contato a {
+    text-decoration: none;
+    color: #094d00;
+    word-break: break-word;
+  }
+  
+  .informacoes-contato a:hover {
+    text-decoration: underline;
+  }
+  
+  .mapa-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .gmap {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .grid-contato {
+      grid-template-columns: 1fr; 
+    }
+  
+    .informacoes-contato p {
+      font-size: 1rem;
+    }
+  
+    .gmap {
+      min-height: 250px;
+    }
+  }
+  

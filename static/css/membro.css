@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poopins';
+  }
+  
+  body {
+    background: #f2f2f2;
+    color: #000;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .btn-add {
+    background: #0e4711;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .btn-add:hover {
+    background: #3e8e41;
+  }
+  .sidebar {
+    width: 350px;
+    background: #0e4711;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 20px;
+  }
+  
+  .sidebar .logo {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; 
+  }
+  
+  .sidebar a.logout {
+    margin-top: auto;
+    color: #e74c3c;
+    font-weight: bold;
+  } 
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .sidebar nav a {
+    display: block;
+    color: white; 
+    padding: 10px 0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-size: 1rem;
+  }
+  
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 40px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .team-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  
+  .team-table th, .team-table td {
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .team-table th {
+    background-color: #0e4711; 
+    color: #fff;
+  }
+  
+  .team-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .btn-edit, .btn-delete {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-edit {
+    background-color: #0e4711;
+  }
+  
+  .btn-edit:hover {
+    background-color: #0d8112;
+  }
+  
+  .btn-delete {
+    background-color: #d11a2a;
+  }
+  
+  .btn-delete:hover {
+    background-color: #b00f1f;
+  }
+
+.alert {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 370px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add {
+    background: #0e4711;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.btn-add:hover {
+    background: #3e8e41;
+}
+
+.form-container {
+    margin-top: 30px;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #0e4711;
+  outline: none;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.btn-add-membro {
+    background: #0e4711;
+    width: 250px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .btn-add-membro:hover {
+    background: #3e8e41;
+  }
+
+
+/*gerencia Membro*/
+
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  
+  .team-table th, .team-table td {
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .team-table th {
+    background-color: #0e4711; 
+    color: #fff;
+  }
+  
+  .team-table tr:hover {
+    background-color: #f9f9f9;
+  }
+
+   .btn-edit, .btn-delete {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-edit {
+    background-color: #0e4711;
+  }
+  
+  .btn-edit:hover {
+    background-color: #0d8112;
+  }
+  
+  .btn-delete {
+    background-color: #d11a2a;
+  }
+  
+  .btn-delete:hover {
+    background-color: #b00f1f;
+  }
+
+.alert {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
