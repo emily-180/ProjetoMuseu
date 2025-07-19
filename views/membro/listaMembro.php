@@ -18,46 +18,56 @@ ob_start();
     <?php endif; ?>
 
     <div class="header">
-      <h1>Gerenciamento da Equipe</h1>
-      <a href="/ProjetoMuseu/routerMembro.php?action=exibirFormCadastro" class="btn">+ Novo Membro</a>
-    </div>
+  <h1>Gerenciamento da Equipe</h1>
 
-    <section class="secao-tabela">
-      <table class="tabela-visitas">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Sobre</th>
-            <th>Perfil</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($membros as $membro): ?>
-          <tr>
-            <td><?= htmlspecialchars($membro['nome']) ?></td>
-            <td><?= htmlspecialchars($membro['email']) ?></td>
-            <td><?= htmlspecialchars($membro['sobre']) ?></td>
-            <td><?= htmlspecialchars($membro['perfil']) ?></td>
+  <?php if ($_SESSION['usuario_perfil'] === 'Coordenador(a) do Museu'): ?>
+    <a href="/ProjetoMuseu/routerMembro.php?action=exibirFormCadastro" class="btn">+ Novo Membro</a>
+  <?php endif; ?>
+</div>
+
+<section class="secao-tabela">
+  <table class="tabela-visitas">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Sobre</th>
+        <th>Perfil</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($membros as $membro): ?>
+        <tr>
+          <td><?= htmlspecialchars($membro['nome']) ?></td>
+          <td><?= htmlspecialchars($membro['email']) ?></td>
+          <td><?= htmlspecialchars($membro['sobre']) ?></td>
+          <td><?= htmlspecialchars($membro['perfil']) ?></td>
           <td>
+            <?php
+              $ehCoordenador = $_SESSION['usuario_perfil'] === 'Coordenador(a) do Museu';
+              $usuarioLogadoId = $_SESSION['usuario_id'];
+              $podeEditar = $ehCoordenador || $usuarioLogadoId == $membro['id'];
+            ?>
+
+            <?php if ($podeEditar): ?>
               <a href="/ProjetoMuseu/routerMembro.php?action=editar&id=<?= $membro['id'] ?>" class="btn-edit">
                 <i class="bi bi-pencil-square"></i> Editar
               </a>
-              
-              <?php if ($_SESSION['usuario_perfil'] === 'Coordenador(a) do Museu'): ?>
-                <a href="#" class="btn-edit btn-excluir" data-id="<?= $membro['id'] ?>">
-                  <i class="bi bi-trash"></i> Excluir
-                </a>
-              <?php endif; ?>
-            </td>
+            <?php endif; ?>
 
+            <?php if ($ehCoordenador && $usuarioLogadoId != $membro['id']): ?>
+              <a href="#" class="btn-edit btn-excluir" data-id="<?= $membro['id'] ?>">
+                <i class="bi bi-trash"></i> Excluir
+              </a>
+            <?php endif; ?>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</section>
 
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-    </section>
   </main>
 
   <script>

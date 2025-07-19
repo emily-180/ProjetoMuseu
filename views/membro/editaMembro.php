@@ -4,8 +4,12 @@ $erros = $_SESSION['erros'] ?? [];
 $dados = $_SESSION['dados'] ?? [];
 unset($_SESSION['sucesso'], $_SESSION['erros'], $_SESSION['dados']);
 
-// Preenche com os dados do banco se não veio do POST
-$dados = array_merge($membro, $dados); // Prioriza dados do formulário, se existirem
+$dados = array_merge($membro, $dados); 
+
+$usuarioLogado = [
+  'id' => $_SESSION['usuario_id'] ?? null,
+  'perfil' => $_SESSION['usuario_perfil'] ?? null
+];
 
 ob_start();
 ?>
@@ -43,8 +47,6 @@ ob_start();
       <?php endif; ?>
     </div>
 
-    <!-- Senha omitida no editar -->
-
     <div class="form-group">
       <label for="sobre">Sobre:</label>
       <textarea id="sobre" name="sobre" required><?= htmlspecialchars($dados['sobre'] ?? '') ?></textarea>
@@ -54,17 +56,27 @@ ob_start();
     </div>
 
     <div class="form-group">
-      <label for="perfil">Perfil:</label>
-      <select id="perfil" name="perfil" required>
-        <option value="">-- Selecione --</option>
-        <option value="Monitor(a)" <?= ($dados['perfil'] ?? '') === 'Monitor(a)' ? 'selected' : '' ?>>Monitor(a)</option>
-        <option value="Professor(a)" <?= ($dados['perfil'] ?? '') === 'Professor(a)' ? 'selected' : '' ?>>Professor(a)</option>
-        <option value="Coordenador(a) do Museu" <?= ($dados['perfil'] ?? '') === 'Coordenador(a) do Museu' ? 'selected' : '' ?>>Coordenador(a) do Museu</option>
-      </select>
-      <?php if (isset($erros['perfil'])): ?>
-        <span class="error-message"><?= htmlspecialchars($erros['perfil']) ?></span>
-      <?php endif; ?>
+        <label for="perfil">Perfil:</label>
+
+        <?php if ($usuarioLogado['id'] == $dados['id']): ?>
+            <input type="text" readonly class="form-control" value="<?= htmlspecialchars($dados['perfil']) ?>">
+            <input type="hidden" name="perfil" value="<?= htmlspecialchars($dados['perfil']) ?>">
+        <?php else: ?>
+            <select id="perfil" name="perfil" required>
+            <option value="">-- Selecione --</option>
+            <option value="Monitor(a)" <?= ($dados['perfil'] ?? '') === 'Monitor(a)' ? 'selected' : '' ?>>Monitor(a)</option>
+            <option value="Professor(a)" <?= ($dados['perfil'] ?? '') === 'Professor(a)' ? 'selected' : '' ?>>Professor(a)</option>
+            <option value="Coordenador(a) do Museu" <?= ($dados['perfil'] ?? '') === 'Coordenador(a) do Museu' ? 'selected' : '' ?>>Coordenador(a) do Museu</option>
+            </select>
+        <?php endif; ?>
+
+        <?php if (isset($erros['perfil'])): ?>
+            <span class="error-message"><?= htmlspecialchars($erros['perfil']) ?></span>
+        <?php endif; ?>
     </div>
+
+
+
 
     <button type="submit" class="btn">Salvar Alterações</button>
   </form>
