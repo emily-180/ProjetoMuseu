@@ -19,6 +19,9 @@ $dados = $dados ?? [];
             <div class="login-content">
                 <div class="left-box"></div>
                 <div class="right-box">
+                    <a href="/ProjetoMuseu/" class="text-decoration-none text-dark mb-3 d-inline-block">
+                        <i class="bi bi-arrow-left"></i> Voltar para o início
+                    </a>
                     <h2>LOGIN</h2>
                     <p class="text-muted">Entre para continuar</p>
 

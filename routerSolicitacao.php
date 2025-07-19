@@ -15,8 +15,7 @@ switch ($action) {
     case 'atualizar':
     $controller->atualizarSituacao();
     break;
-
-    // pode adicionar outras ações aqui depois
+    
     default:
         echo "Ação inválida em routerSolicitacao.";
         break;
