@@ -10,7 +10,7 @@
   <nav class="menu">
      <a href="/ProjetoMuseu/views/gerenciamento/gerenciamento.php"><i class="bi bi-book-half"></i> Painel</a>
     <a href="/ProjetoMuseu/routerMembro.php?action=listar"><i class="bi bi-people-fill"></i> Membros</a>
-    <a href="/ProjetoMuseu/template/gerenciaSolicitacao.php"><i class="bi bi-calendar"></i> Solicitações</a>
+    <a href="/ProjetoMuseu/routerSolicitacao.php?action=index"><i class="bi bi-calendar"></i> Solicitações</a>
   </nav>
   <a href="/ProjetoMuseu/routerAuth.php?page=logout" class="logout">
     <i class="bi bi-box-arrow-right"></i> Sair
