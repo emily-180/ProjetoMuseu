@@ -15,23 +15,6 @@
     margin-bottom: 20px;
 }
 
-.btn-add {
-    background: #0e4711;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn-add:hover {
-    background: #3e8e41;
-}
-
 .secao-tabela {
     overflow-x: auto; 
 }
@@ -69,7 +52,7 @@
     background-color: #f1f1f1;
 }
 
-.btn, .btn-delete {
+.btn{
     display: inline-block;
     padding: 8px 16px;
     border-radius: 6px;
@@ -85,15 +68,6 @@
 
 .btn:hover {
     background-color: #0d8112;
-}
-
-.btn-delete {
-    background-color: #d11a2a;
-    margin-left: 8px;
-}
-
-.btn-delete:hover {
-    background-color: #b00f1f;
 }
 
 .alert {

@@ -14,8 +14,18 @@ switch ($action) {
     case 'exibirFormCadastro':
         $controller->exibirFormCadastro();
         break;
+    case 'excluir':
+        $controller->excluir();
+        break;
+    case 'editar':
+        $controller->editar();
+        break;
+    case 'atualizar':
+        $controller->atualizar();
+        break;
     case 'listar':
     default:
         $controller->listar();
         break;
 }
+
