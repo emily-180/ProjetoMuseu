@@ -87,4 +87,68 @@ class MembroController
         require __DIR__ . '/../views/membro/cadastraMembro.php';
     }
 
+    public function excluir()
+    {
+        if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_perfil'] !== 'Coordenador(a) do Museu') {
+            header('Location: /ProjetoMuseu/routerAuth.php?page=login');
+            exit;
+        }
+
+        $id = $_GET['id'] ?? null;
+
+        if ($id) {
+            try {
+                $this->membroModel->excluir($id);
+                $_SESSION['sucesso'] = 'Membro excluído com sucesso.';
+            } catch (PDOException $e) {
+                $_SESSION['sucesso'] = 'Erro ao excluir membro: ' . $e->getMessage();
+            }
+        }
+
+        header('Location: /ProjetoMuseu/routerMembro.php?action=listar');
+        exit;
+    }
+
+    public function editar()
+{
+    $id = $_GET['id'] ?? null;
+
+    if (!$id) {
+        $_SESSION['erro'] = 'ID do membro não informado.';
+        header('Location: /ProjetoMuseu/routerMembro.php?action=listar');
+        exit();
+    }
+
+    $membro = $this->membroModel->buscarPorId($id);
+
+    if (!$membro) {
+        $_SESSION['erro'] = 'Membro não encontrado.';
+        header('Location: /ProjetoMuseu/routerMembro.php?action=listar');
+        exit();
+    }
+
+    require __DIR__ . '/../views/membro/editaMembro.php';
+}
+
+public function atualizar()
+{
+    $dados = $_POST;
+
+    if (empty($dados['id']) || empty($dados['nome']) || empty($dados['email']) || empty($dados['sobre']) || empty($dados['perfil'])) {
+        $_SESSION['erro'] = 'Preencha todos os campos.';
+        header("Location: /ProjetoMuseu/routerMembro.php?action=editar&id=" . $dados['id']);
+        exit();
+    }
+
+    try {
+        $this->membroModel->atualizar($dados);
+        $_SESSION['sucesso'] = 'Membro atualizado com sucesso!';
+    } catch (PDOException $e) {
+        $_SESSION['erro'] = 'Erro ao atualizar membro: ' . $e->getMessage();
+    }
+
+    header('Location: /ProjetoMuseu/routerMembro.php?action=listar');
+    exit();
+}
+
 }
