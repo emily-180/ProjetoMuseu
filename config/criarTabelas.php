@@ -23,6 +23,27 @@ try {
     $conexao->exec($sql);
     echo "Tabela 'membro' criada com sucesso (ou já existia).<br>";
 
+    $nome = 'Administrador';
+    $email = 'adm@gmail.com';
+    $senha_crua = 'administrador@123';
+    $senha_hash = password_hash($senha_crua, PASSWORD_DEFAULT);
+    $perfil = 'Coordenador(a) do Museu';
+    $sobre = 'Login ADM';
+
+    $sql = "
+        INSERT INTO membro (nome, senha, email, perfil, sobre) 
+        VALUES (:nome, :senha, :email, :perfil, :sobre);
+    ";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute([
+        ':nome' => $nome,
+        ':senha' => $senha_hash,
+        ':email' => $email,
+        ':perfil' => $perfil,
+        ':sobre' => $sobre
+    ]);
+
+
     // Criar tabela visitante
     $sql = "
         CREATE TABLE IF NOT EXISTS visitante (

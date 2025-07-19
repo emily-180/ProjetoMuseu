@@ -6,40 +6,29 @@
   display: block !important;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poopins';
-  }
-  
-  body {
-    background:white;
-    color: #000;
-  }
-  
-  .container {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    padding: 40px;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 370px; 
+  margin: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .tabs {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tabs {
   display: flex;
   gap: 10px;
-  margin-top: 20px; 
+  margin-top: 20px;
   margin-bottom: 20px;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
 .tab-button {
@@ -51,39 +40,48 @@
   border-radius: 5px;
   transition: background 0.3s;
   color: #333;
-}
-
-.button-salvar {
-  background-color: #2e7d32;
-  border: none;
-  padding: 5px 20px;
-  font-weight: bold;
-  border-radius: 5px;
-  color: white;
+  font-size: 16px;
 }
 
 .tab-button.active {
-  background-color: #2e7d32; /* Verde escuro */
+  background-color: #0e4711;
   color: white;
 }
 
+.button-salvar {
+  background-color: #0e4711;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-salvar:hover {
+  background-color: #3e8e41;
+}
 
 .solicitacao {
   border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background-color: #ccc;
 }
 
 .solicitacao-resumo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  background-color: #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
   flex-wrap: wrap;
   gap: 10px;
+  font-size: 16px;
+  color: #333;
 }
 
 .solicitacao-resumo .escola-info {
@@ -94,29 +92,58 @@
 .solicitacao-resumo .data-hora {
   flex-shrink: 0;
   font-size: 0.9rem;
-  color: #333;
+  color: #666;
   text-align: right;
 }
 
 .abrir-btn {
-  background-color: #2e7d32;
-  color: white;
+  background-color: #0e4711;
   border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  flex-shrink: 0;
+}
+
+.abrir-btn:hover {
+  background-color: #0d8112;
 }
 
 .solicitacao-detalhes {
   display: none;
   padding: 20px;
-  border-top: 1px solid #ccc;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  font-size: 15px;
 }
 
 .situacao-select {
   margin-top: 8px;
-  padding: 6px;
-  border-radius: 4px;
+  padding: 10px;
+  height: 40px; /* mesma altura do botão */
+  border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+}
+
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tabs {
+    justify-content: flex-start;
+  }
 }

@@ -1,17 +1,14 @@
-<?php 
+<?php
+if (!isset($_SESSION['usuario_id'])) {
+    header('Location: /ProjetoMuseu/views/login.php');
+    exit();
+}
+
+$sucesso = $_SESSION['sucesso'] ?? null;
+unset($_SESSION['sucesso']);
+
 ob_start();
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gerenciamento das Solicitações</title>
-  <!-- Aqui inclui o CSS direto, ajusta o caminho conforme seu projeto -->
-  <link rel="stylesheet" href="/ProjetoMuseu/static/css/solicitacoes.css" />
-</head>
-<body>
 
 <div class="container-geral">
   <main class="main-content">
@@ -118,7 +115,7 @@ ob_start();
             </p>
             <form class="form-situacao" action="/ProjetoMuseu/routerSolicitacao.php?action=atualizar" method="POST">
               <input type="hidden" name="id" value="<?= $solicitacao['id'] ?>">
-              <label for="situacao">Situação:</label>
+              <p><strong>Situação:</strong>
               <select name="situacao" class="situacao-select">
                 <option value="Nova" <?= $solicitacao['situacao'] == 'Nova' ? 'selected' : '' ?>>Nova</option>
                 <option value="Em análise" <?= $solicitacao['situacao'] == 'Em análise' ? 'selected' : '' ?>>Em análise</option>
@@ -126,6 +123,7 @@ ob_start();
                 <option value="Concluído" <?= $solicitacao['situacao'] == 'Concluído' ? 'selected' : '' ?>>Concluído</option>
               </select>
               <button class="button-salvar" type="submit">Salvar</button>
+              </p>
             </form>
           </div>
         </div>
@@ -198,5 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-</body>
-</html>
+<?php
+$conteudo = ob_get_clean();
+$pagina_css = 'solicitacoes.css';
+require __DIR__ . '/../includes/layout.php';
+
