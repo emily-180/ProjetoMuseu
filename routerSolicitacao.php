@@ -28,8 +28,6 @@ switch ($action) {
     case 'atualizar':
         $controller->atualizarSituacao(); // Atualiza a situação e envia email
         break;
-
-    // Aqui você pode colocar mais ações futuras, tipo deletar, visualizar, etc.
     
     default:
         echo "❌ Ação inválida em routerSolicitacao.";

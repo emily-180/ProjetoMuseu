@@ -38,6 +38,33 @@ class Membro
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function excluir($id)
+    {
+        $sql = "DELETE FROM membro WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([':id' => $id]);
+    }
+
+    public function buscarPorId($id)
+    {
+        $sql = "SELECT * FROM membro WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function atualizar($dados)
+    {
+        $sql = "UPDATE membro SET nome = :nome, email = :email, sobre = :sobre, perfil = :perfil WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([
+            ':nome' => $dados['nome'],
+            ':email' => $dados['email'],
+            ':sobre' => $dados['sobre'],
+            ':perfil' => $dados['perfil'],
+            ':id' => $dados['id']
+        ]);
+    }
 
     
 }
