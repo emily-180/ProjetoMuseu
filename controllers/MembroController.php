@@ -137,15 +137,43 @@ class MembroController
 public function atualizar()
 {
     $dados = $_POST;
+    $erros = [];
 
     if (empty($dados['id']) || empty($dados['nome']) || empty($dados['email']) || empty($dados['sobre']) || empty($dados['perfil'])) {
-        $_SESSION['erro'] = 'Preencha todos os campos.';
+        $erros['geral'] = 'Preencha todos os campos obrigatórios.';
+    }
+
+    if (!empty($dados['senha_atual']) || !empty($dados['nova_senha']) || !empty($dados['confirmar_senha'])) {
+        $usuario = $this->membroModel->buscarPorId($dados['id']);
+
+        if (!password_verify($dados['senha_atual'] ?? '', $usuario['senha'])) {
+            $erros['senha_atual'] = 'Senha atual incorreta.';
+        }
+
+        if (empty($dados['nova_senha']) || strlen($dados['nova_senha']) < 6) {
+            $erros['nova_senha'] = 'A nova senha deve ter pelo menos 6 caracteres.';
+        }
+
+        if ($dados['nova_senha'] !== $dados['confirmar_senha']) {
+            $erros['confirmar_senha'] = 'As senhas não coincidem.';
+        }
+    }
+
+    if (!empty($erros)) {
+        $_SESSION['erros'] = $erros;
+        $_SESSION['dados'] = $dados;
         header("Location: /ProjetoMuseu/routerMembro.php?action=editar&id=" . $dados['id']);
         exit();
     }
 
     try {
-        $this->membroModel->atualizar($dados);
+        if (!empty($dados['nova_senha'])) {
+            $dados['senha'] = password_hash($dados['nova_senha'], PASSWORD_DEFAULT);
+            $this->membroModel->atualizarComSenha($dados);
+        } else {
+            $this->membroModel->atualizar($dados);
+        }
+
         $_SESSION['sucesso'] = 'Membro atualizado com sucesso!';
     } catch (PDOException $e) {
         $_SESSION['erro'] = 'Erro ao atualizar membro: ' . $e->getMessage();
@@ -154,5 +182,6 @@ public function atualizar()
     header('Location: /ProjetoMuseu/routerMembro.php?action=listar');
     exit();
 }
+
 
 }
