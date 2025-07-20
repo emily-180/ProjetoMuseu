@@ -1,107 +1,116 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Poppins";
+    font-family: 'Poppins', sans-serif;
     background-color: #fff;
     color: #222;
 }
 
-.custom-header {
-    background-color: #0e4711;
-    color: white;
-    border-bottom: 4px solid #8c6e4a;
-    position: relative;
-  }
-  
-  .logo-museu {
-    max-height: 150px;
-  }
-  
-  .nome-museu {
-    font-weight: 800;
-    font-size: 2.2rem;
-    color: #fff;
-    max-width: 100%;
-  }
-  
-  .slogan-museu {
-    font-size: 1.1rem;
-    color: #f1f1f1;
-  }
-  
-  .green-space {
-    height: 30px;
-    background-color: #0e4711;
-  }
-  
-  .custom-navbar {
-    background-color: #ffffff;
-    padding: 1.2rem 0;
-    border-top: 2px solid #8c6e4a;
-    margin-top: -10px;
-  }
-  
-  .nav-link-custom {
-    color: #0e0d0d;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s, border-bottom 0.3s;
-    text-transform: uppercase;
-  }
-  
-  .nav-link-custom:hover {
-    color: #4b774d;
-    border-bottom: 2px solid #4b774d;
-  }
-  
-.custom-footer {
-    background-color: #0e4711;
-    color: #eee;
-    border-top: 4px solid #8c6e4a;
-    font-size: 0.95rem;
-}
-  
-.custom-footer h5 {
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+.hero-header {
+  background: url('/ProjetoMuseu/static/imagens/teste.jpg') no-repeat center center/cover;
+  height: 450px;
+  position: relative;
+  color: white;
 }
 
-.custom-footer p {
-    margin: 0;
-    line-height: 1.5;
+.hero-header .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
 }
 
-.footer-left,
-.footer-right {
-    max-width: 48%;
+.logo-header {
+  height: 60px;
 }
 
-.social-icons a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+.nav-links .nav-item {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
-.social-icons a:hover {
-    color: #111;
+.nav-links .nav-item:hover {
+  color: #24922a;
 }
 
-.custom-footer h6 {
-    color: #fff;
-    font-size: 0.85rem;
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  font-family: 'Poppins', sans-serif;
 }
 
-.footer-center {
-    color: #fff;
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
 }
+@media (min-width: 768px) {
+  #menuLateral {
+    display: none !important;
+  }
+}
+
+
   
-.footer-center i {
-    color: #fff;
-}
+footer {
+      background-color: #1d6d21;
+      color: #ffffff;
+      padding: 40px 0 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    footer h5 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    footer p,
+    footer a {
+      color: #ffffff;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #cc9466;
+    }
+
+    .social-icons a {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-right: 20px;
+      transition: color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: #cc9466;
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ffffff;
+      margin-top: 30px;
+      padding-top: 15px;
+      font-size: 0.85rem;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .text-md-end {
+        text-align: right !important;
+      }
+    }
 
 .section-label {
     position: absolute;
@@ -123,5 +132,92 @@ body {
     margin-top: 6px;
     border-radius: 3px;
   }
-  
-  
+
+  section {
+    scroll-margin-top: 100px;
+  }
+
+.text-custom {
+ color:#8f6747;
+}
+
+.bg-custom {
+ color:#8f6747;
+}
+
+  h2.fw-bold {
+    font-size: 2.2rem;
+  }
+
+  .inicio-cards .card {
+    transition: all 0.3s ease;
+    border-radius: 20px;
+  }
+
+  .inicio-cards .card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to left, #f0f4f8, #e2fce1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .inicio-cards i {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+  .guia-visita i {
+    font-size: 3rem;
+    padding: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .guia-visita h5 {
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .guia-visita p {
+    font-size: 0.95rem;
+  }
+
+  .historia-section {
+    background: linear-gradient(to left, #f0f4f8, #e2fce1);
+    border-top: 3px solid #8f6747;
+    border-bottom: 3px solid #8f6747;
+  }
+
+  .historia-section h2 {
+    font-size: 2.1rem;
+  }
+
+  .historia-section p {
+    font-size: 1rem;
+  }
+
+  .historia-section .btn-outline-success {
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  }
+
+  .historia-section .btn-outline-success:hover {
+    background-color: #198754;
+    color: white;
+  }
+
+  @media (max-width: 767px) {
+    .guia-visita i {
+      font-size: 2.5rem;
+      padding: 15px;
+    }
+
+    .historia-section img {
+      margin-top: 20px;
+    }
+
+    h2.fw-bold {
+      font-size: 1.8rem;
+    }
+  }
