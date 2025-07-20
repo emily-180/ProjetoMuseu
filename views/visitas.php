@@ -49,25 +49,25 @@ $membros = $membroModel->listar();
       </div>
     </section>
 
-    <div>
-      <h2 class="titulo">Guia de Visitas</h2>
-      <p class="texto-guia">Aqui você encontrará as informações sobre como funcionam as visitas ao museu, incluindo horários, informações sobre os ambientes e muito mais. Aproveite a nossa trilha de conhecimento!</p>
-    </div>
+   <p class="intro-equipe">
+      Conheça as pessoas dedicadas que fazem o Museu de Ciências José Alencar de Carvalho acontecer. Nossa equipe é formada por docentes, bolsistas e voluntários apaixonados pela educação e preservação da memória da região.
+  </p>
 
-   <h2 class="titulo mt-5">Equipe</h2>
-    <div class="equipe-lista">
-      <?php if (!empty($membros)): ?>
-        <?php foreach ($membros as $membro): ?>
-          <div class="membro-card">
-            <strong><?= htmlspecialchars($membro['nome']) ?></strong>
-            <span class="perfil"><?= htmlspecialchars($membro['perfil']) ?></span>
-            <p><?= nl2br(htmlspecialchars($membro['sobre'])) ?></p>
-          </div>
-        <?php endforeach; ?>
-      <?php else: ?>
-        <p>Nenhum membro cadastrado.</p>
-      <?php endif; ?>
-    </div>
+  <h2 class="titulo mt-5">Equipe</h2>
+
+      <div class="equipe-lista">
+        <?php if (!empty($membros)): ?>
+          <?php foreach ($membros as $membro): ?>
+            <div class="membro-card">
+              <strong><?= htmlspecialchars($membro['nome']) ?></strong>
+              <span class="perfil"><?= htmlspecialchars($membro['perfil']) ?></span>
+              <p><?= nl2br(htmlspecialchars($membro['sobre'])) ?></p>
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p>Nenhum membro cadastrado.</p>
+        <?php endif; ?>
+      </div>
 
 
 </main>

@@ -81,6 +81,25 @@
   margin-top: 2rem;
 }
 
+.intro-equipe {
+  font-size: 1.05rem;
+  color: #333;
+  max-width: 800px;
+  text-align: center;
+  margin: 30px auto 10px auto;
+  line-height: 1.6;
+  padding: 20px 35px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-equipe:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
 .membro-card {
   background-color: #ffffff;
   border-radius: 16px;

@@ -1,64 +1,98 @@
 #conteudo {
-    padding: 20px 30px;
-    max-width: 1050px;
-    margin: 0 auto;
+  padding: 20px 30px;
+  max-width: 1050px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .titulo {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.grid-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  background: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.grid-contato:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.informacoes-contato p {
+  margin: 16px 0;
+  font-size: 1.1rem;
+  color: #34495e;
+  line-height: 1.7;
+}
+
+.informacoes-contato strong {
+  color: #000;
+}
+
+.informacoes-contato a {
+  text-decoration: none;
+  color: #1abc9c;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.informacoes-contato a:hover {
+  color: #16a085;
+  text-decoration: underline;
+}
+
+.mapa-container {
+  width: 100%;
+  height: 100%;
+}
+
+.gmap {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gmap:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
   .grid-contato {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
-  
+
   .informacoes-contato p {
-    margin: 12px 0;
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.6;
+    font-size: 1rem;
   }
-  
-  .informacoes-contato a {
-    text-decoration: none;
-    color: #094d00;
-    word-break: break-word;
-  }
-  
-  .informacoes-contato a:hover {
-    text-decoration: underline;
-  }
-  
-  .mapa-container {
-    width: 100%;
-    height: 100%;
-  }
-  
+
   .gmap {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
   }
-  
-  @media (max-width: 768px) {
-    .grid-contato {
-      grid-template-columns: 1fr; 
-    }
-  
-    .informacoes-contato p {
-      font-size: 1rem;
-    }
-  
-    .gmap {
-      min-height: 250px;
-    }
-  }
-  
+}

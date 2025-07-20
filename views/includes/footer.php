@@ -8,33 +8,54 @@
     <link rel="stylesheet" href="/ProjetoMuseu/static/css/main.css">
 </head>
 <body>
-    <footer class="custom-footer mt-5">
-    <div class="container py-4">
-      <div class="row">
-        <div class="col-12 col-md-4 mb-4 mb-md-0">
-          <h5>Museu de Ciências Naturais</h5>
-          <p>Rua do Conhecimento, 123<br>Centro – Cidade/Estado<br>Aberto de terça a domingo, 9h às 17h</p>
-        </div>
-        <div class="col-12 col-md-4 mb-4 mb-md-0">
-          <h5>Contato</h5>
-          <p>Email: contato@museuciencias.org<br>Telefone: (00) 1234-5678</p>
-          <div class="social-icons mt-2">
-            <a href="#" class="me-2">Instagram</a>
-            <a href="#" class="me-2">Facebook</a>
-            <a href="#">YouTube</a>
+    <footer>
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-4 mb-4">
+            <h5>Endereço</h5>
+            <p>
+              Rod. Machado - Paraguaçu, KM 03<br />
+              Santo Antonio, Machado-MG<br />
+              37750-000
+            </p>
+          </div>
+
+           <div class="col-12 col-md-4 mb-4">
+            <h5>Contato</h5>
+
+            <p class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-2 fs-5">
+              <a href="mailto:contato@museuciencias.org" target="_blank" aria-label="Email" title="Email"
+                class="text-white text-decoration-none d-flex align-items-center">
+                <i class="bi bi-envelope-fill" style="font-size: 1.7rem;"></i>
+                <span class="ms-2" style="font-size: 1rem;">contato@museuciencias.org</span>
+              </a>
+            </p>
+
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+              <a href="https://www.instagram.com/museu_josealencardecarvalho/"
+                target="_blank" aria-label="Instagram" title="Instagram"
+                class="text-white text-decoration-none d-flex align-items-center">
+                <i class="bi bi-instagram" style="font-size: 1.7rem;"></i>
+                <span class="ms-2" style="font-size: 1rem;">@museu_josealencardecarvalho</span>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-md-4 text-md-end">
+            <h5>Administração</h5>
+            <a class="footer-link" href="/ProjetoMuseu/routerAuth.php?page=login">
+              <i class="bi bi-lock-fill me-1"></i> Área restrita
+            </a>
           </div>
         </div>
-        <div class="col-12 col-md-4 text-md-end">
-          <h5>Painel do Administrador</h5>
-          <a class="text-white" href="/ProjetoMuseu/routerAuth.php?page=login">
-            <i class="bi bi-lock-fill me-2"></i>Área restrita
-          </a>
+
+        <div class="footer-bottom mt-4">
+          Desenvolvido por Emily e Sabrina – Sistemas de Informação © 2025
         </div>
       </div>
-      <div class="text-center border-top pt-3 mt-3">
-        <h6 class="mb-0">Desenvolvido por Emily e Sabrina – Sistemas de Informação</h6>
-      </div>
-    </div>
+  </footer>
+
     
 </body>
 </html>

@@ -41,7 +41,7 @@ input {
     width: 100%;
 }
 
-button {
+.form-container button {
     padding: 12px 20px;
     font-size: 1rem;
     background-color: #107a13;
@@ -49,8 +49,6 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
-    /* Centraliza o botão */
     align-self: center;
     width: 100%;
     max-width: 250px;
