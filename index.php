@@ -47,7 +47,7 @@
         <a href="/ProjetoMuseu/views/sobre.php" class="btn btn-outline-success mt-3">Leia mais sobre o museu</a>
       </div>
       <div class="col-md-5 text-center">
-        <img src="/ProjetoMuseu/static/imagens/teste.jpg" alt="Museu" class="img-fluid rounded shadow">
+        <img src="/ProjetoMuseu/static/imagens/foto1.jpeg" alt="Museu" class="img-fluid rounded shadow">
       </div>
     </div>
   </div>
