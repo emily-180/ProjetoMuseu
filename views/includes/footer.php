@@ -24,10 +24,10 @@
             <h5>Contato</h5>
 
             <p class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-2 fs-5">
-              <a href="mailto:contato@museuciencias.org" target="_blank" aria-label="Email" title="Email"
+              <a href="mailto: museu.ifsuldeminasmch@gmail.com" target="_blank" aria-label="Email" title="Email"
                 class="text-white text-decoration-none d-flex align-items-center">
                 <i class="bi bi-envelope-fill" style="font-size: 1.7rem;"></i>
-                <span class="ms-2" style="font-size: 1rem;">contato@museuciencias.org</span>
+                <span class="ms-2" style="font-size: 1rem;">museu.ifsuldeminasmch@gmail.com</span>
               </a>
             </p>
 
