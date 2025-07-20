@@ -75,6 +75,34 @@ ob_start();
         <?php endif; ?>
     </div>
 
+    <?php if ($usuarioLogado['id'] == ($dados['id'] ?? null)): ?>
+      <div class="form-group">
+        <label for="senha_atual">Senha atual:</label>
+        <input type="password" id="senha_atual" name="senha_atual">
+        <?php if (isset($erros['senha_atual'])): ?>
+          <span class="error-message"><?= htmlspecialchars($erros['senha_atual']) ?></span>
+        <?php endif; ?>
+      </div>
+
+      <div class="form-group">
+        <label for="nova_senha">Nova senha:</label>
+        <input type="password" id="nova_senha" name="nova_senha">
+        <?php if (isset($erros['nova_senha'])): ?>
+          <span class="error-message"><?= htmlspecialchars($erros['nova_senha']) ?></span>
+        <?php endif; ?>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmar_senha">Confirmar nova senha:</label>
+        <input type="password" id="confirmar_senha" name="confirmar_senha">
+        <?php if (isset($erros['confirmar_senha'])): ?>
+          <span class="error-message"><?= htmlspecialchars($erros['confirmar_senha']) ?></span>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
+
+
+
     <button type="submit" class="btn">Salvar Alterações</button>
   </form>
 </main>

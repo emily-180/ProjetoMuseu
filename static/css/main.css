@@ -7,7 +7,7 @@ body {
 }
 
 .hero-header {
-  background: url('/ProjetoMuseu/static/imagens/teste.jpg') no-repeat center center/cover;
+  background: url('/ProjetoMuseu/static/imagens/foto1.jpeg') no-repeat center center/cover;
   height: 450px;
   position: relative;
   color: white;

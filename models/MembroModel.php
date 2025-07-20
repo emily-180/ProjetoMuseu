@@ -66,5 +66,19 @@ class Membro
         ]);
     }
 
+    public function atualizarComSenha($dados)
+{
+    $sql = "UPDATE membro SET nome = :nome, email = :email, sobre = :sobre, perfil = :perfil, senha = :senha WHERE id = :id";
+    $stmt = $this->pdo->prepare($sql);
+    return $stmt->execute([
+        ':nome' => $dados['nome'],
+        ':email' => $dados['email'],
+        ':sobre' => $dados['sobre'],
+        ':perfil' => $dados['perfil'],
+        ':senha' => $dados['senha'],
+        ':id' => $dados['id']
+    ]);
+}
+
     
 }
